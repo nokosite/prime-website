@@ -1,76 +1,116 @@
 // Simple and Reliable Loading Screen
 document.addEventListener('DOMContentLoaded', function() {
-    const loadingScreen = document.getElementById('loadingScreen');
+    console.log('DOM loaded, starting loading screen...');
+    
+    let progress = 0;
+    let currentStep = 0;
+    const totalSteps = 6;
+    
     const percentageEl = document.getElementById('percentage');
     const statusEl = document.getElementById('statusText');
+    const loadingEl = document.getElementById('loadingScreen');
     const stepsEl = document.getElementById('stepsContainer');
-    
-    // Hide all main content until loading is complete
-    const mainContent = document.querySelectorAll('section, .navbar, .footer');
-    mainContent.forEach(el => {
-        if (el) el.style.visibility = 'hidden';
-    });
 
-    // Simple loading states
-    const loadingStates = [
-        { progress: 0, text: "Initializing..." },
-        { progress: 25, text: "Loading assets..." },
-        { progress: 50, text: "Preparing interface..." },
-        { progress: 75, text: "Almost ready..." },
-        { progress: 100, text: "Complete!" }
+    const statusMessages = [
+        "Initializing...",
+        "Loading assets...",
+        "Processing data...",
+        "Optimizing performance...",
+        "Finalizing setup...",
+        "Ready to launch..."
     ];
 
-    let currentState = 0;
-    const totalDuration = 2000; // 2 seconds total loading time
-    const startTime = performance.now();
+    // Create step indicators
+    function createSteps() {
+        if (!stepsEl) return;
+        stepsEl.innerHTML = '';
+        for (let i = 0; i < totalSteps; i++) {
+            const step = document.createElement('div');
+            step.className = 'step';
+            step.id = `step-${i}`;
+            stepsEl.appendChild(step);
+        }
+        console.log('Steps created');
+    }
 
+    // Update loading progress
     function updateLoading() {
-        const currentTime = performance.now();
-        const elapsedTime = currentTime - startTime;
-        const progress = Math.min((elapsedTime / totalDuration) * 100, 100);
-
+        console.log('Updating progress:', progress);
+        
+        // Increment progress more slowly
+        progress += Math.random() * 5 + 2; // Reduced increment
+        if (progress > 100) progress = 100;
+        
         // Update percentage
         if (percentageEl) {
             percentageEl.textContent = Math.floor(progress) + '%';
         }
-
-        // Update status text
-        if (statusEl) {
-            const currentStateIndex = Math.floor(progress / 25);
-            if (currentStateIndex !== currentState && currentStateIndex < loadingStates.length) {
-                currentState = currentStateIndex;
-                statusEl.textContent = loadingStates[currentState].text;
+        
+        // Update status and steps
+        const stepIndex = Math.floor((progress / 100) * totalSteps);
+        if (stepIndex > currentStep && stepIndex < totalSteps) {
+            if (statusEl && statusMessages[currentStep]) {
+                statusEl.textContent = statusMessages[currentStep];
             }
+            
+            const stepEl = document.getElementById(`step-${currentStep}`);
+            if (stepEl) {
+                stepEl.classList.add('active');
+            }
+            
+            currentStep = stepIndex;
         }
-
+        
         // Continue or finish
         if (progress < 100) {
-            requestAnimationFrame(updateLoading);
+            setTimeout(updateLoading, 200); // Increased delay
         } else {
-            finishLoading();
+            // Add a delay before finishing
+            setTimeout(finishLoading, 1000);
         }
     }
 
+    // Finish loading and hide screen
     function finishLoading() {
-        // Show all main content
-        mainContent.forEach(el => {
-            if (el) el.style.visibility = '';
-        });
-
-        // Hide loading screen with fade
-        if (loadingScreen) {
-            loadingScreen.style.opacity = '0';
-            loadingScreen.style.transition = 'opacity 0.5s ease';
-            
-            // Remove from DOM after fade
-            setTimeout(() => {
-                loadingScreen.style.display = 'none';
-            }, 500);
+        console.log('Finishing loading...');
+        
+        // Activate all remaining steps
+        for (let i = 0; i < totalSteps; i++) {
+            const stepEl = document.getElementById(`step-${i}`);
+            if (stepEl) {
+                stepEl.classList.add('active');
+            }
         }
+        
+        if (statusEl) {
+            statusEl.textContent = "Complete!";
+        }
+        
+        // Add a delay before hiding
+        setTimeout(() => {
+            if (loadingEl) {
+                loadingEl.style.opacity = '0';
+                loadingEl.style.pointerEvents = 'none';
+                
+                // Add a longer delay before removing from DOM
+                setTimeout(() => {
+                    loadingEl.style.display = 'none';
+                }, 1000);
+            }
+        }, 1000);
     }
 
-    // Start loading
-    requestAnimationFrame(updateLoading);
+    // Start the loading process
+    function startLoading() {
+        console.log('Starting loading process...');
+        createSteps();
+        setTimeout(() => {
+            updateLoading();
+        }, 500); // Increased initial delay
+    }
+
+    // Initialize
+    startLoading();
 });
 
 // Scroll animations
