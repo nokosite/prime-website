@@ -1,0 +1,498 @@
+/* About Hero Section */
+.about-hero {
+    min-height: calc(40vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+    padding-top: 0;
+}
+
+.about-hero-container {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+}
+
+.about-title {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.about-subtitle {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.about-description {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+/* Vision Section */
+.vision-section {
+    padding: 100px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.vision-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.vision-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 40px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.vision-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.vision-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+    border-radius: 15px;
+}
+
+.vision-icon svg {
+    width: 30px;
+    height: 30px;
+    fill: #fff;
+}
+
+.vision-card h2 {
+    color: #fff;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.vision-card p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+/* Team Section */
+.team-section {
+    padding: 100px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.team-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 50px;
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.team-member {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.member-image {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-member h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.member-role {
+    color: #4facfe;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.member-bio {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+/* Values Section */
+.values-section {
+    padding: 100px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.values-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.value-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 40px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.value-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+    border-radius: 15px;
+}
+
+.value-icon svg {
+    width: 30px;
+    height: 30px;
+    fill: #fff;
+}
+
+.value-card h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.value-card p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .about-title {
+        font-size: 3.5rem;
+    }
+    .about-subtitle {
+        font-size: 1.3rem;
+    }
+    .section-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 80px 20px;
+    }
+    .about-title {
+        font-size: 3rem;
+    }
+    .vision-card,
+    .team-member,
+    .value-card {
+        padding: 30px;
+    }
+    .member-image {
+        width: 120px;
+        height: 120px;
+    }
+    .mobile-menu-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 24px;
+        padding: 0;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .mobile-menu-btn span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: #fff;
+        transition: all 0.3s ease;
+        transform-origin: center;
+        pointer-events: none;
+    }
+
+    .mobile-menu-btn.active span:nth-child(1) {
+        transform: translateY(11px) rotate(45deg);
+    }
+
+    .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-btn.active span:nth-child(3) {
+        transform: translateY(-11px) rotate(-45deg);
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.3s ease;
+        z-index: 1000;
+        padding: 80px 20px 20px;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-link {
+        color: #fff;
+        font-size: 1.2rem;
+        margin: 15px 0;
+        padding: 10px 20px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        opacity: 0;
+        transform: translateX(20px);
+        pointer-events: auto;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .nav-links.active .nav-link {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .nav-links.active .nav-link:nth-child(1) { transition-delay: 0.1s; }
+    .nav-links.active .nav-link:nth-child(2) { transition-delay: 0.2s; }
+    .nav-links.active .nav-link:nth-child(3) { transition-delay: 0.3s; }
+    .nav-links.active .nav-link:nth-child(4) { transition-delay: 0.4s; }
+    .nav-links.active .nav-link:nth-child(5) { transition-delay: 0.5s; }
+
+    /* Prevent body scroll when menu is open */
+    body.menu-open {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+    }
+
+    /* Touch feedback for mobile */
+    .nav-link:active {
+        transform: scale(0.98);
+        opacity: 0.8;
+    }
+
+    .mobile-menu-btn:active {
+        opacity: 0.8;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-title {
+        font-size: 2.5rem;
+    }
+    .about-subtitle {
+        font-size: 1.2rem;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .vision-card h2,
+    .team-member h3,
+    .value-card h3 {
+        font-size: 1.3rem;
+    }
+    .team-member h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Performance Optimizations */
+.vision-card,
+.team-member,
+.value-card {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+.member-image img {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+    .vision-card:hover,
+    .team-member:hover,
+    .value-card:hover {
+        transform: none;
+    }
+    
+    .vision-card:active,
+    .team-member:active,
+    .value-card:active {
+        transform: scale(0.98);
+    }
+}
+
+/* Navbar Fix */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+/* Add padding to body to prevent content from going under navbar */
+body {
+    padding-top: 80px; /* Adjust this value based on your navbar height */
+}
+
+/* Add shadow when scrolled */
+.navbar.scrolled {
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure other sections don't get hidden */
+.vision-section,
+.team-section,
+.values-section {
+    position: relative;
+    z-index: 1;
+}
+
+/* iOS specific fixes */
+@supports (-webkit-touch-callout: none) {
+    .nav-links {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .mobile-menu-btn {
+        -webkit-appearance: none;
+    }
+    
+    .nav-link {
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+/* Android specific fixes */
+@supports (-webkit-tap-highlight-color: none) {
+    .nav-link {
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    .mobile-menu-btn {
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+/* Ensure proper touch handling */
+@media (hover: none) {
+    .nav-link:hover {
+        transform: none;
+    }
+    
+    .nav-link:active {
+        transform: scale(0.98);
+    }
+    
+    .mobile-menu-btn:hover {
+        opacity: 1;
+    }
+    
+    .mobile-menu-btn:active {
+        opacity: 0.8;
+    }
+} 
