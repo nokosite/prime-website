@@ -1,116 +1,76 @@
 // Simple and Reliable Loading Screen
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded, starting loading screen...');
-    
-    let progress = 0;
-    let currentStep = 0;
-    const totalSteps = 6;
-    
+    const loadingScreen = document.getElementById('loadingScreen');
     const percentageEl = document.getElementById('percentage');
     const statusEl = document.getElementById('statusText');
-    const loadingEl = document.getElementById('loadingScreen');
     const stepsEl = document.getElementById('stepsContainer');
+    
+    // Hide all main content until loading is complete
+    const mainContent = document.querySelectorAll('section, .navbar, .footer');
+    mainContent.forEach(el => {
+        if (el) el.style.visibility = 'hidden';
+    });
 
-    const statusMessages = [
-        "Initializing...",
-        "Loading assets...",
-        "Processing data...",
-        "Optimizing performance...",
-        "Finalizing setup...",
-        "Ready to launch..."
+    // Simple loading states
+    const loadingStates = [
+        { progress: 0, text: "Initializing..." },
+        { progress: 25, text: "Loading assets..." },
+        { progress: 50, text: "Preparing interface..." },
+        { progress: 75, text: "Almost ready..." },
+        { progress: 100, text: "Complete!" }
     ];
 
-    // Create step indicators
-    function createSteps() {
-        if (!stepsEl) return;
-        stepsEl.innerHTML = '';
-        for (let i = 0; i < totalSteps; i++) {
-            const step = document.createElement('div');
-            step.className = 'step';
-            step.id = `step-${i}`;
-            stepsEl.appendChild(step);
-        }
-        console.log('Steps created');
-    }
+    let currentState = 0;
+    const totalDuration = 2000; // 2 seconds total loading time
+    const startTime = performance.now();
 
-    // Update loading progress
     function updateLoading() {
-        console.log('Updating progress:', progress);
-        
-        // Increment progress more slowly
-        progress += Math.random() * 5 + 2; // Reduced increment
-        if (progress > 100) progress = 100;
-        
+        const currentTime = performance.now();
+        const elapsedTime = currentTime - startTime;
+        const progress = Math.min((elapsedTime / totalDuration) * 100, 100);
+
         // Update percentage
         if (percentageEl) {
             percentageEl.textContent = Math.floor(progress) + '%';
         }
-        
-        // Update status and steps
-        const stepIndex = Math.floor((progress / 100) * totalSteps);
-        if (stepIndex > currentStep && stepIndex < totalSteps) {
-            if (statusEl && statusMessages[currentStep]) {
-                statusEl.textContent = statusMessages[currentStep];
+
+        // Update status text
+        if (statusEl) {
+            const currentStateIndex = Math.floor(progress / 25);
+            if (currentStateIndex !== currentState && currentStateIndex < loadingStates.length) {
+                currentState = currentStateIndex;
+                statusEl.textContent = loadingStates[currentState].text;
             }
-            
-            const stepEl = document.getElementById(`step-${currentStep}`);
-            if (stepEl) {
-                stepEl.classList.add('active');
-            }
-            
-            currentStep = stepIndex;
         }
-        
+
         // Continue or finish
         if (progress < 100) {
-            setTimeout(updateLoading, 200); // Increased delay
+            requestAnimationFrame(updateLoading);
         } else {
-            // Add a delay before finishing
-            setTimeout(finishLoading, 1000);
+            finishLoading();
         }
     }
 
-    // Finish loading and hide screen
     function finishLoading() {
-        console.log('Finishing loading...');
-        
-        // Activate all remaining steps
-        for (let i = 0; i < totalSteps; i++) {
-            const stepEl = document.getElementById(`step-${i}`);
-            if (stepEl) {
-                stepEl.classList.add('active');
-            }
+        // Show all main content
+        mainContent.forEach(el => {
+            if (el) el.style.visibility = '';
+        });
+
+        // Hide loading screen with fade
+        if (loadingScreen) {
+            loadingScreen.style.opacity = '0';
+            loadingScreen.style.transition = 'opacity 0.5s ease';
+            
+            // Remove from DOM after fade
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 500);
         }
-        
-        if (statusEl) {
-            statusEl.textContent = "Complete!";
-        }
-        
-        // Add a delay before hiding
-        setTimeout(() => {
-            if (loadingEl) {
-                loadingEl.style.opacity = '0';
-                loadingEl.style.pointerEvents = 'none';
-                
-                // Add a longer delay before removing from DOM
-                setTimeout(() => {
-                    loadingEl.style.display = 'none';
-                }, 1000);
-            }
-        }, 1000);
     }
 
-    // Start the loading process
-    function startLoading() {
-        console.log('Starting loading process...');
-        createSteps();
-        setTimeout(() => {
-            updateLoading();
-        }, 500); // Increased initial delay
-    }
-
-    // Initialize
-    startLoading();
+    // Start loading
+    requestAnimationFrame(updateLoading);
 });
 
 // Scroll animations
@@ -489,4 +449,90 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Update on scroll
     window.addEventListener('scroll', updateScrollIndicator);
+});
+
+// Optimized Footer Performance
+document.addEventListener('DOMContentLoaded', function() {
+    const footer = document.querySelector('.footer');
+    const footerLinks = document.querySelectorAll('.footer-link');
+    const socialLinks = document.querySelectorAll('.social-link');
+    const legalLinks = document.querySelectorAll('.legal-link');
+    
+    // Check if device is mobile
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    
+    // Optimize touch events for mobile
+    if (isMobile) {
+        // Prevent double-tap zoom on links
+        const preventDoubleTap = (e) => {
+            e.preventDefault();
+            const target = e.currentTarget;
+            target.click();
+        };
+
+        // Add touch events with passive listeners
+        footerLinks.forEach(link => {
+            link.addEventListener('touchstart', () => {
+                link.style.transform = 'scale(0.98)';
+            }, { passive: true });
+            
+            link.addEventListener('touchend', () => {
+                link.style.transform = '';
+            }, { passive: true });
+        });
+
+        socialLinks.forEach(link => {
+            link.addEventListener('touchstart', () => {
+                link.style.transform = 'scale(0.95)';
+            }, { passive: true });
+            
+            link.addEventListener('touchend', () => {
+                link.style.transform = '';
+            }, { passive: true });
+        });
+
+        legalLinks.forEach(link => {
+            link.addEventListener('touchstart', () => {
+                link.style.opacity = '0.8';
+            }, { passive: true });
+            
+            link.addEventListener('touchend', () => {
+                link.style.opacity = '';
+            }, { passive: true });
+        });
+    }
+
+    // Optimize scroll performance for mobile
+    let ticking = false;
+    const handleScroll = () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                const rect = footer.getBoundingClientRect();
+                const isVisible = rect.top <= window.innerHeight && rect.bottom >= 0;
+                
+                if (isVisible) {
+                    footer.classList.add('visible');
+                }
+                ticking = false;
+            });
+            ticking = true;
+        }
+    };
+
+    // Use passive scroll listener for better performance
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Initial check
+    handleScroll();
+
+    // Handle orientation changes
+    window.addEventListener('orientationchange', () => {
+        // Reset any transforms
+        footerLinks.forEach(link => link.style.transform = '');
+        socialLinks.forEach(link => link.style.transform = '');
+        legalLinks.forEach(link => link.style.opacity = '');
+        
+        // Recalculate visibility
+        handleScroll();
+    }, { passive: true });
 });
