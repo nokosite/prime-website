@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Prime - Advanced Cryptocurrency Solution</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Web3 Background Elements -->
+    <div class="gradient-mesh"></div>
+    <div class="hexagon-grid"></div>
+    <div class="particle-container">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+        <span class="scroll-text">Scroll</span>
+        <div class="scroll-arrow"></div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="logo-container">
+            <div class="modern-logo">
+                <div class="logo-frame">
+                    <div class="orbit-dot dot-1"></div>
+                    <div class="orbit-dot dot-2"></div>
+                    <div class="orbit-dot dot-3"></div>
+                    <div class="orbit-dot dot-4"></div>
+                </div>
+                <img src="img/logo_besar.svg" alt="Prime Logo" class="logo-image">
+            </div>
+        </div>
+        <div class="loading-text">Loading</div>
+        <div id="stepsContainer" class="steps-container"></div>
+        <div id="percentage" class="loading-percentage">0%</div>
+        <div id="statusText" class="status-text">Initializing...</div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="corner-dot-bottom-left"></div>
+        <div class="corner-dot-bottom-right"></div>
+        <div class="navbar-container">
+            <a href="#" class="navbar-logo">
+                <img src="img/logo.png" alt="Prime Logo">
+            </a>
+
+            <button type="button" class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links">
+                <a href="#hero" class="nav-link">Home</a>
+                <a href="#apple-pay" class="nav-link">Apple Pay</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#ecosystem" class="nav-link">Ecosystem</a>
+                <a href="#" class="nav-link cta-button">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-container">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="gradient-text">
+                            CRYPTO SPENDING<br/>MADE PRIME
+                        </span>
+                    </h1>
+                    <h2 class="hero-subtitle">
+                        PrimeCard is your seamless bridge between digital assets and everyday spending.
+                    </h2>
+                    <p class="hero-description">
+                        Use your crypto anywhere cards are accepted — with real-time conversion, zero friction, and complete control.
+                    </p>
+                </div>
+                <div class="hero-cta">
+                    <a href="#" class="cta-button">
+                        GET STARTED NOW
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-cards">
+                <div class="card-showcase">
+                    <div class="group-10">
+                        <div class="overlap-15">
+                            <div class="rectangle-3"></div>
+                            <img class="group-11" src="img/logo.png" />
+                            <img class="image-4" src="img/visa.svg" />
+                            <div class="text-wrapper-10">Crypto Debit Card</div>
+                            <div class="text-wrapper-11">Card holder</div>
+                            <div class="text-wrapper-12">Vitalik Buterin</div>
+                            <div class="text-wrapper-13">Expiry date</div>
+                            <div class="text-wrapper-14">01/26</div>
+                        </div>
+                    </div>
+                    <div class="group-14">
+                        <div class="overlap-15">
+                            <div class="rectangle-3"></div>
+                            <img class="group-15" src="img/logo.png" />
+                            <img class="image-7" src="img/visa.svg" />
+                            <div class="text-wrapper-10">Crypto Debit Card</div>
+                            <div class="text-wrapper-11">Card holder</div>
+                            <div class="text-wrapper-12">Satoshi Nakamoto</div>
+                            <div class="text-wrapper-13">Expiry date</div>
+                            <div class="text-wrapper-14">02/27</div>
+                        </div>
+                    </div>
+                    <div class="group-17">
+                        <div class="overlap-15">
+                            <div class="rectangle-4"></div>
+                            <img class="group-18" src="img/logo.png" />
+                            <img class="image-8" src="img/visa.svg" />
+                            <div class="text-wrapper-10">Crypto Debit Card</div>
+                            <div class="text-wrapper-11">Card holder</div>
+                            <div class="text-wrapper-12">Changpeng Zhao</div>
+                            <div class="text-wrapper-13">Expiry date</div>
+                            <div class="text-wrapper-14">03/28</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-connector"></div>
+
+    <!-- Apple Pay Section -->
+    <section id="apple-pay" class="apple-pay-section">
+        <div class="container">
+            <div class="apple-pay-grid">
+                <!-- Left Side - Phone Mockup -->
+                <div class="phone-showcase">
+                    <div class="phone-card">
+                        <div class="corner-dot-bottom-left"></div>
+                        <div class="corner-dot-bottom-right"></div>
+                        <div class="phone-container">
+                            <!-- iPhone Frame -->
+                            <div class="iphone-frame">
+                                <!-- Screen Content -->
+                                <div class="phone-screen">
+                                    <!-- Prime Interface -->
+                                    <div class="prime-interface">
+                                        <!-- Header -->
+                                        <div class="prime-header">
+                                            <img src="img/logo_lengkap.svg" alt="Prime Logo" class="prime-logo" />
+                                        </div>
+
+                                        <!-- Card Display -->
+                                        <div class="card-display">
+                                            <div class="payment-card">
+                                                <div class="card-header">
+                                                    <span class="card-brand">PRIME</span>
+                                                    <span class="card-type">Debit</span>
+                                                </div>
+                                                <div class="card-number">•••• 2847</div>
+                                                <div class="card-bottom">
+                                                    <span class="card-holder">CRYPTO USER</span>
+                                                    <span class="card-expiry">12/26</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Checklist Button -->
+                                        <div class="checklist-container">
+                                            <div class="checklist-button">
+                                                <div class="checkmark-circle">
+                                                    <svg class="checkmark" viewBox="0 0 24 24">
+                                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                                                    </svg>
+                                                </div>
+                                                <span>Payment Confirmed</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="phone-background"></div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Content -->
+                <div class="apple-pay-content">
+                    <h2 class="section-title gradient-text">
+                        TAP & GO<br />WITH APPLE PAY
+                    </h2>
+                    <p class="section-description">
+                        Worldwide compatibility with Apple Pay and Google Pay — spend crypto effortlessly in real life with Primecard.
+                    </p>
+                    <a href="#" class="cta-button">See Full List</a>
+                </div>
+            </div>
+
+            <!-- Bottom Content -->
+            <div class="apple-pay-features">
+                <div class="feature-row">
+                    <div class="feature-item">
+                        <div class="corner-dot-bottom-left"></div>
+                        <div class="corner-dot-bottom-right"></div>
+                        <h3 class="feature-title">Top-up Instantly</h3>
+                        <p class="feature-description">
+                            Just a 5% fee — topping up your Primecard is quick, simple, and smooth.
+                        </p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="corner-dot-bottom-left"></div>
+                        <div class="corner-dot-bottom-right"></div>
+                        <h3 class="feature-title">Changed Your Mind?</h3>
+                        <p class="feature-description">
+                            No problem. You can withdraw your crypto back to your wallet anytime — directly from your PrimeCard.
+                        </p>
+                    </div>
+                </div>
+                <div class="crypto-support">
+                    <div class="corner-dot-bottom-left"></div>
+                    <div class="corner-dot-bottom-right"></div>
+                    <p>
+                        From Bitcoin and Ethereum to emerging DeFi tokens and stablecoins, Primecard supports a wide range of digital assets — giving you the freedom to spend your crypto, your way.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-connector"></div>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="features-container">
+            <div class="features-header fade-in">
+                <div class="section-badge">
+                    <span>🚀</span>
+                    <span>PRIME FEATURES</span>
+                </div>
+                <h2 class="section-title gradient-text">Advanced Crypto Features</h2>
+                <p class="section-subtitle">
+                    Experience next-generation crypto spending with cutting-edge features designed for modern digital transactions
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-number">01</div>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Global Acceptance</h3>
+                        <p class="feature-description">
+                            Spend your crypto anywhere in the world. Unlike traditional cards, Primecard works globally with zero geographical restrictions or foreign transaction fees.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.18l7 3.12v4.7c0 4.67-3.13 8.96-7 10.48-3.87-1.52-7-5.81-7-10.48v-4.7l7-3.12z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-number">02</div>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Apple Pay & Google Pay Ready</h3>
+                        <p class="feature-description">
+                            Seamlessly integrate with Apple Pay and Google Pay for contactless payments. Tap and go anywhere these services are accepted worldwide.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-number">03</div>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Instant Activation</h3>
+                        <p class="feature-description">
+                            Get your virtual Primecard instantly. No lengthy approval processes, no waiting periods. Create, verify, and start spending in seconds.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-number">04</div>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Multi-Crypto Support</h3>
+                        <p class="feature-description">
+                            Support for 100+ cryptocurrencies including Bitcoin, Ethereum, stablecoins, and emerging DeFi tokens. True freedom to spend your way.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-number">05</div>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Smart Analytics</h3>
+                        <p class="feature-description">
+                            Track your spending patterns, analyze crypto conversions, and get insights into your financial habits with advanced analytics dashboard.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 16H6V10h12v12zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-number">06</div>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Bank-Grade Security</h3>
+                        <p class="feature-description">
+                            Military-grade encryption, multi-signature protocols, and advanced fraud protection ensure your crypto assets are always secure.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Circular Section -->
+    <section id="ecosystem" class="circular-section">
+        <div class="circular-container">
+            <div class="circular-content">
+                <div class="circular-center">
+                    <div class="center-circle">
+                        <img src="img/logo_besar.svg" alt="Prime Logo" class="center-logo">
+                    </div>
+                    <div class="orbit-container">
+                        <div class="orbit orbit-1">
+                            <div class="orbit-ball ball-1"></div>
+                        </div>
+                        <div class="orbit orbit-2">
+                            <div class="orbit-ball ball-2"></div>
+                        </div>
+                        <div class="orbit orbit-3">
+                            <div class="orbit-ball ball-3"></div>
+                        </div>
+                        <div class="orbit orbit-4">
+                            <div class="orbit-ball ball-4"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="circular-text">
+                    <h2 class="circular-title">Prime Ecosystem</h2>
+                    <p class="circular-description">Experience the future of digital finance with our comprehensive ecosystem. Seamlessly integrated features that empower your crypto journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-connector"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="corner-dot-bottom-left"></div>
+            <div class="corner-dot-bottom-right"></div>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="img/logo_besar.svg" alt="Prime Logo" class="footer-logo-img">
+                    </div>
+                    <p class="footer-tagline">Your bridge to crypto spending</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Product</h4>
+                    <div class="footer-links">
+                        <a href="#features" class="footer-link">Features</a>
+                        <a href="#apple-pay" class="footer-link">Apple Pay</a>
+                        <a href="#ecosystem" class="footer-link">Ecosystem</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Company</h4>
+                    <div class="footer-links">
+                        <a href="#about" class="footer-link">About Us</a>
+                        <a href="#careers" class="footer-link">Careers</a>
+                        <a href="#contact" class="footer-link">Contact</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Resources</h4>
+                    <div class="footer-links">
+                        <a href="#blog" class="footer-link">Blog</a>
+                        <a href="#docs" class="footer-link">Documentation</a>
+                        <a href="#support" class="footer-link">Support</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="footer-legal">
+                    <p class="copyright">&copy; 2024 Prime. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="#privacy" class="legal-link">Privacy Policy</a>
+                        <a href="#terms" class="legal-link">Terms of Service</a>
+                        <a href="#cookies" class="legal-link">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
